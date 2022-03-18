@@ -10,7 +10,7 @@
       "name": "gene_id",
       "label": "Gene ID (a valid ENST) of gene interested in.",
       "class": "string",
-      "optional": true,
+      "optional": false,
       "default": null,
       "help": "A valid ENST Gene ID (MUST BE IN transcripts.tsv [project-G6BJF50JJv8p4PjGB9yy7YQ2:file-G7xyzF8JJv8kyV7q5z8VV3Vb]) to extract carriers and phenotype/covariate information for."
     },

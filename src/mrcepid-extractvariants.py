@@ -280,7 +280,7 @@ def create_covariate_file(sex: int, genetics_samples: set, additional_covariates
             print("    Quantitative                                            : " + ', '.join(found_quantitative_covariates))
         else:
             print("    Quantitative                                            : NULL")
-        if len(found_quantitative_covariates) > 0:
+        if len(found_categorical_covariates) > 0:
             print("    Categorical                                             : " + ', '.join(found_categorical_covariates))
         else:
             print("    Categorical                                             : NULL")
@@ -311,7 +311,7 @@ def create_covariate_file(sex: int, genetics_samples: set, additional_covariates
     num_all_samples = 0
     na_pheno_samples = 0 # for checking number of individuals missing phenotype information
     for indv in base_covar_reader:
-        if indv['22001-0.0'] != "": # need to exclude blank row individuals, eid is normally the only thing that shows up, so filter on sex
+        if indv['22001-0.0'] != "NA": # need to exclude blank row individuals, eid is normally the only thing that shows up, so filter on sex
             indv_writer = {'FID': indv['eid'],
                            'IID': indv['eid']}
             for PC in range(1,41):
